@@ -1,0 +1,20 @@
+/* Colori personalizzati per la card in base al meteo */
+.sky-blue {
+  background-color: #87cefa; /* Cielo sereno - azzurro chiaro */
+  color: white;
+}
+
+.cloudy-grey {
+  background-color: #b0c4de; /* Nuvoloso - grigio chiaro */
+  color: black;
+}
+
+.rainy-grey {
+  background-color: #505050; /* Pioggia - grigio scuro */
+  color: white;
+}
+
+.default-color {
+  background-color: #f0f0f0; /* Colore di default per altre condizioni */
+  color: black;
+}
