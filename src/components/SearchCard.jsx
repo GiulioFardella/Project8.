@@ -1,18 +1,23 @@
 import React from "react";
-import { Button, Form } from "react-bootstrap"; // React-Bootstrap components
+import { Form, Button } from "react-bootstrap";
 
 function SearchCard({ city, setCity, handleSearch }) {
   return (
     <div className="search-card">
-      <Form.Control
-        type="text"
-        placeholder="Cerca una città"
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
-      />
-      <Button onClick={handleSearch} className="mt-3">
-        Cerca
-      </Button>
+      <Form>
+        <Form.Group controlId="formCity">
+          <Form.Label className="text-light" >Inserisci una città</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Cerca la tua città"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          />
+        </Form.Group>
+        <Button variant="success mt-5" onClick={handleSearch}>
+          Cerca
+        </Button>
+      </Form>
     </div>
   );
 }

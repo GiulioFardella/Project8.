@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Card, Form } from "react-bootstrap"; // React-Bootstrap components
 import SearchCard from "./components/SearchCard";
 import WeatherCard from "./components/WeatherCard";
-import "./App.css";
+import "./App.css"; // Importa il CSS per gli stili
 
 function App() {
   const [weatherData, setWeatherData] = useState(null); // Dati meteo
@@ -17,7 +17,9 @@ function App() {
 
     try {
       const response = await fetch(url);
-      if (!response.ok) throw new Error("Città non trovata.");
+      if (!response.ok) {
+        throw new Error("Città non trovata.");
+      }
       const data = await response.json();
       setWeatherData(data); // Salva i dati meteo
       setError(null); // Resetta gli errori
@@ -30,7 +32,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="text-light" >S.E.T.I Meteo</h1>
+      <h1 className="text-light">S.E.T.I Meteo</h1>
       <SearchCard city={city} setCity={setCity} handleSearch={handleSearch} />
       {error && <p className="error">{error}</p>}
       {weatherData && <WeatherCard data={weatherData} />}
